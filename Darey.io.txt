@@ -1,0 +1,75 @@
+Install Windows terminal
+Install VSCode and VS Code extensions
+Creating work space folder
+Inside the VS Code >Extension > Install Material Icon and Git extension
+Install git > Download Git SCM (Source Code Manager)
+
+On the Window terminal type git on the Windows terminal to confirm the workability
+
+Install open ssh server. Follow the LINK https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=powershell,
+to install the package. Pause at the point to open the OpenSSH Server, since we have not created any instance.
+
+Enter ctrl + l = to clear your screen.
+
+==========================================================
+
+https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=powershell
+
+To create an SSH key for yourself copy the command from the LINK: https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement,
+# Set the sshd service to be started automatically
+Get-Service -Name sshd | Set-Service -StartupType Automatic
+
+# Now start the sshd service
+Start-Service sshd
+
+Note that this command is used for generating key: ssh-keygen -t ed25519
+
+The generated keys are found on the specified file path, both the private and public keys
+========================================================================================
+Create an instance in AWS (be sure you have an AWS free tier account, a github account)
+ssh into the instance 
+Brief into of mark down for documentation
+
+
+\\\\\To connect your linux instance to your git, you will need to add the public key to your git account
+Go to the developer settings to generate the token
+You will need to save the generated for future access otherwise you will have access to the token: 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
+
+Simple git commands to push our documentation to github
+
+===========================================================================================
+ssh -i "C:\Users\AjagunVM\Downloads\Abisola.pem" azureuser@172.174.137.0
+
+Connect to the Azure using Connect-AzureRmAccount
+
+Get-AzureRmVMBootDiagnosticsData -ResourceGroupName LINUX-RG -Name LINUXM -Linux
+
+
+Get --LINUXM --resource-group LINUX-RG --image UbuntuLTS --generate-ssh-keys
+
+This should be run in Bash
+Reference article: https://learn.microsoft.com/en-us/azure/virtual-machines/linux/create-ssh-keys-detailed
+
+To get public and private key for your linux--- run this in Bash $ ssh-keygen
+
+
+
+ 
+cat "C:\Users\AjagunVM\Downloads\Abisola.pem"
+
+
+
+===============================================================
+Lauching to the Ubuntu on AWS =
+
+
+Note that the public IP is dynamic and changes every time.
+
+ec2-3-141-169-30.us-east-2.compute.amazonaws.com
+
+Having issues running or connecting to the machine lauch this command 
+
+chmod 400 Abisola-EC2.pem
+
+
+Locating the pem file dowbloaded from the AWS, pull up the PowerShell command and navigate to the download folder
